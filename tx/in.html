@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="tct">KO</h1>
+    <button id="jk">click</button>
+</body>
+<script>
+send = document.querySelector("#tct")
+but = document.querySelector("#jk")
+
+let isJoke = false;
+
+but.addEventListener("click",function(){
+    if(isJoke){
+        send.textContent  = "JOKE"
+        document.body.style.backgroundColor = "blue";
+    }else{
+     send.textContent  = "KO"
+    document.body.style.backgroundColor = "";
+    }
+    isJoke = !isJoke;
+})
+
+
+</script>
+</html>
