@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -8,6 +8,19 @@ import Todos from './components/Todos'
 
 function App() {
   const [count, setCount] = useState(0)
+  const [todos, setTodos] = useState([])
+
+
+  useEffect(() => {
+     const todos = JSON.parse(localStorage.getItem('todos')) || [];
+     if (todos.length > 0) {
+       setTodos(todos);
+     }
+   }, []);
+ 
+   useEffect(() => {
+     localStorage.setItem('todos', JSON.stringify(todos));
+   }, [todos]);
 
   return (
     <>
