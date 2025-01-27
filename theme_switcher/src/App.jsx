@@ -3,9 +3,11 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import { ThemeProvider } from './context/Theme'
-import { useEffect } from 'react'
+import { useEffect} from 'react'
 import ThemeButton from './components/ThemeButton'
 import Card from './components/Card'
+import Navbar from './components/Navbar'
+
 
 function App() {
   const [themeMode, setThemeMode] = useState("light");
@@ -26,7 +28,9 @@ useEffect(() =>{
   const [count, setCount] = useState(0)
 
   return (
+   
     <ThemeProvider value={{themeMode, darkTheme, lightTheme}}>
+      <Navbar/>
     
     <div className='flex flex-wrap min-h-screen items-center'>
       <div className='w-full'>
@@ -39,7 +43,9 @@ useEffect(() =>{
         </div>
       </div>
     </div>
+   
     </ThemeProvider>
+    
   )
 }
 
