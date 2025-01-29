@@ -80,6 +80,23 @@ export class Service{
      }
    }
 
+   async getCurrentUser(){
+    try {
+        return await this.account.get();
+    } catch (error) {
+        console.log("Apprwwrite servie ::getcurrentUser: error",error)
+    }
+       return null;
+   }
+   
+    async logout(){
+        try {
+            return await this.aacount.deleteSession();
+        } catch (error) {
+            console.log("Appwrite service :: logout :: error",error)
+        }
+        
+    }
 
 }
 
